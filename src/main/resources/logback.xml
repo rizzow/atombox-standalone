@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE logback>
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <!-- Configuration -->
+    <contextName>atombox-client</contextName>
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>atombox-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%-5level] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%d{HH:mm:ss} [%-5level] %logger{36} - %msg%n</pattern>-->
+            <pattern>%d{HH:mm:ss} [%-5level] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- Loggers -->
+    <logger name="org.humanized.tools" level="DEBUG"/>
+
+    <!-- UNCOMMENT to debug SQL Statements -->
+    <!--<logger name="org.humanized.tools.database.mapper.ImageMapper" level="ALL" />-->
+
+    <!-- Silence MyBatis -->
+    <logger name="org.humanized.tools.database" level="OFF"/>
+
+    <!-- Silence AWS JDK -->
+    <logger name="com.amazonaws.services.s3" level="OFF"/>
+
+    <root level="debug">
+        <appender-ref ref="console"/>
+    </root>
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+</configuration>

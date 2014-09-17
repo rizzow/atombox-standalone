@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+
+
+    <typeAliases>
+        <package name="org.humanized.tools.model"/>
+    </typeAliases>
+
+
+    <environments default="default">
+        <environment id="default">
+            <transactionManager type="JDBC">
+                <property name="maxActive" value="50"/>
+                <property name="maxIdle" value="10"/>
+                <property name="maxWait" value="5000"/>
+                <property name="validationQuery" value="SELECT 1"/>
+                <property name="testOnBorrow" value="true"/>
+                <property name="removeAbandoned" value="true"/>
+                <property name="removeAbandonedTimeout" value="20"/>
+            </transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${database.driver}"/>
+                <property name="url" value="${database.url}"/>
+                <property name="username" value="${database.username}"/>
+                <property name="password" value="${database.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <!-- Register mappers here -->
+    <mappers>
+        <mapper resource="mapper/ImageMapper.xml"/>
+    </mappers>
+
+
+</configuration>

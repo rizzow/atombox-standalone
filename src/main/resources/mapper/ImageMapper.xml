@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.humanized.tools.database.mapper.ImageMapper">
+
+    <insert id="store" parameterType="Image">
+        INSERT INTO images (
+            id,
+            title,
+            description,
+            date_created,
+            date_shot,
+            original_file_name,
+            remote_path,
+            remote_file_name,
+            width_pixels,
+            height_pixels,
+            content_type,
+            bits_per_channel,
+            channel_count,
+            orientation,
+            latitude,
+            longitude,
+            source_make,
+            source_model
+        ) VALUES (
+            #{mId},
+            #{mTitle},
+            #{mDescription},
+            #{mDateCreated},
+            #{mDateShot},
+            #{mOriginalFilename},
+            #{mRemotePath},
+            #{mRemoteFilename},
+            #{mWidthPixels},
+            #{mHeightPixels},
+            #{mContentType},
+            #{mPrecision},
+            #{mChannelCount},
+            #{mOrientation},
+            #{mCoordinate.latitude},
+            #{mCoordinate.longitude},
+            #{mImageSource.make},
+            #{mImageSource.model}
+        )
+    </insert>
+
+    <resultMap id="ImageResultMap" type="Image">
+        <id property="mId" column="id"/>
+        <result property="mTitle" column="title"/>
+        <result property="mDescription" column="description"/>
+        <result property="mDateCreated" column="date_created"/>
+        <result property="mDateShot" column="date_shot"/>
+        <result property="mOriginalFilename" column="original_file_name"/>
+        <result property="mRemotePath" column="remote_path"/>
+        <result property="mRemoteFilename" column="remote_file_name"/>
+        <result property="mWidthPixels" column="width_pixels"/>
+        <result property="mHeightPixels" column="height_pixels"/>
+        <result property="mContentType" column="content_type"/>
+        <result property="mBitDepth" column="bit_depth"/>
+        <result property="mOrientation" column="orientation"/>
+
+        <association property="mCoordinate" javaType="Wgs84Coordinate">
+            <result property="mLatitude" column="latitude"/>
+            <result property="mLongitude" column="longitude"/>
+        </association>
+        <association property="mImageSource" javaType="ImageSource">
+            <result property="mSourceMake" column="source_make"/>
+            <result property="mSourceModel" column="source_model"/>
+        </association>
+    </resultMap>
+
+</mapper>

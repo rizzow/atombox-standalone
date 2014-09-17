@@ -1,0 +1,20 @@
+########################################################################
+# ATOMBOX CLIENT CONFIGURATION FILE
+########################################################################
+
+# DATABASE SETTINGS
+database.mybatis.config_file=mybatis.xml
+
+# DATABASE CREDENTIALS
+database.driver=com.mysql.jdbc.Driver
+database.url=jdbc:mysql://127.0.0.1:3306/atombox?rewriteBatchedStatements=true&amp;characterEncoding=utf8
+database.username=atombox
+database.password=atombox
+
+# UPLOADER CONFIGURATION: Comma-separated list of active uploaders, e.g. dummy,s3
+uploaders.active=dummy
+
+# AMAZON S3 CONFIGURATION
+uploaders.s3.access_key=<AWS ACCESSS KEY HERE>
+uploaders.s3.access_secret=<AWS ACCESS SECRET HERE>
+uploaders.s3.bucket=atombox

@@ -1,0 +1,4 @@
+atombox-client
+==============
+
+Java 7 based directory watcher for storing image metadata in DB and backing up the files (e.g. uploading to an Amazon S3 bucket)

@@ -7,12 +7,12 @@ provide new uploaders by implementing a new Uploader class and registering it in
 
 
 Getting started
-===============
+---------------
 Copy or rename the file atombox.properties.example to atombox.properties and edit to your needs.
 
 
 Database settings
-=================
+---------------
 In order to enable database integration (only MySQL tested), please run the SQL scripts in
 
         database/atombox.sql

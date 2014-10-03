@@ -7,82 +7,82 @@ public class Image {
     /**
      * Unique identifier (GUID)
      */
-    protected String mId;
+    private String mId;
 
     /**
      * Image title
      */
-    protected String mTitle;
+    private String mTitle;
 
     /**
      * Image description
      */
-    protected String mDescription;
+    private String mDescription;
 
     /**
      * Date created in system
      */
-    protected Date mDateCreated;
+    private Date mDateCreated;
 
     /**
      * Date picture created
      */
-    protected Date mDateShot;
+    private Date mDateShot;
 
     /**
      * Original 'local' filename
      */
-    protected String mOriginalFilename;
+    private String mOriginalFilename;
 
     /**
      * Remote path (if applicable)
      */
-    protected String mRemotePath;
+    private String mRemotePath;
 
     /**
      * Filename as stored on remote filesystem
      */
-    protected String mRemoteFilename;
+    private String mRemoteFilename;
 
     /**
      * Image width in pixels
      */
-    protected Integer mWidthPixels;
+    private Integer mWidthPixels;
 
     /**
      * Image height in Pixels
      */
-    protected Integer mHeightPixels;
+    private Integer mHeightPixels;
 
     /**
      * MIME-Type of file
      */
-    protected String mContentType;
+    private String mContentType;
 
     /**
      * Number of bits per channel
      */
-    protected Integer mPrecision;
+    private Integer mPrecision;
 
     /**
      * Number of channels (e.g. 3 for RGB)
      */
-    protected Integer mChannelCount;
+    private Integer mChannelCount;
 
     /**
      * Image source orientation
      */
-    protected Integer mOrientation;
+    private Integer mOrientation;
 
     /**
      * Lat/long of image
      */
-    protected Wgs84Coordinate mCoordinate;
+    private Wgs84Coordinate mCoordinate;
 
     /**
      * Origin of image
      */
-    protected ImageSource mImageSource;
+    private ImageSource mImageSource;
 
 
     public String getId() {

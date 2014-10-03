@@ -17,7 +17,7 @@ public class AtomBoxClient {
 
     private static final Logger mLogger = LoggerFactory.getLogger(AtomBoxClient.class);
 
-    private PathWatcher mPathWatcher = new PathWatcher();
+    private final PathWatcher mPathWatcher = new PathWatcher();
     private Properties mProperties;
 
 
@@ -61,18 +61,16 @@ public class AtomBoxClient {
     }
 
 
-    public void addWatch(final String path) {
+    private void addWatch(final String path) {
         try {
             mPathWatcher.addWatch(path);
         } catch (IOException e) {
             mLogger.error("addWatch: could not add watch for path {}: {}", path, e.getMessage());
-        } catch (InterruptedException e) {
-            mLogger.error("addWatch: interrupted for path {}: {}", path, e.getMessage());
         }
     }
 
 
-    public void startWatching() {
+    private void startWatching() {
         try {
             mPathWatcher.startWatching();
         } catch (InterruptedException e) {

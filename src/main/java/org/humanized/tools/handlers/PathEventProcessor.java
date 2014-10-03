@@ -12,7 +12,7 @@ public class PathEventProcessor {
         EVENT_CREATE, EVENT_MODIFY, EVENT_DELETE
     }
 
-    private final Map<PathEvent, List<FileOperationHandler>> mHandlerMap = new HashMap<PathEvent, List<FileOperationHandler>>();
+    private final Map<PathEvent, List<FileOperationHandler>> mHandlerMap = new HashMap<>();
 
 
     public PathEventProcessor() {

@@ -8,6 +8,7 @@ public class GUID {
         boolean valid = false;
         if (guid != null) {
             try {
+                /* Ignore result */
                 UUID.fromString(guid);
                 valid = true;
             } catch (IllegalArgumentException ignore) {

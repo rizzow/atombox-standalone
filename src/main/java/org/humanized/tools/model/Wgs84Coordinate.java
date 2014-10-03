@@ -1,8 +1,8 @@
 package org.humanized.tools.model;
 
 public class Wgs84Coordinate {
-    protected Double mLatitude;
-    protected Double mLongitude;
+    private Double mLatitude;
+    private Double mLongitude;
 
 
     public Wgs84Coordinate() {

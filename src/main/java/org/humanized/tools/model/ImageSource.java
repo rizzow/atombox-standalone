@@ -5,8 +5,8 @@ package org.humanized.tools.model;
  */
 public class ImageSource {
 
-    protected String mMake;
-    protected String mModel;
+    private String mMake;
+    private String mModel;
 
 
     public String getMake() {

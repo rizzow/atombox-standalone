@@ -12,13 +12,13 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-public class AmazonS3Service {
+class AmazonS3Service {
 
-    protected final AmazonS3 mAmazonS3;
-    protected final AWSCredentials mAWSCredentials;
+    private final AmazonS3 mAmazonS3;
+    private final AWSCredentials mAWSCredentials;
 
 
-    protected ClientConfiguration getDefaultConfiguration() {
+    ClientConfiguration getDefaultConfiguration() {
         final ClientConfiguration clientConfig = new ClientConfiguration();
         clientConfig.setProtocol(Protocol.HTTP);
         return clientConfig;

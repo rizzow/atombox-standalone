@@ -14,7 +14,7 @@ public class UploaderFactory {
     private static final String PROP_KEY_ACTIVE_UPLOADERS = "uploaders.active";
     private static final String PROP_SPLITTER = ",";
 
-    private static List<Uploader> mUploaders = new ArrayList<>();
+    private static final List<Uploader> mUploaders = new ArrayList<>();
 
 
     private UploaderFactory() {

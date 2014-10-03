@@ -15,11 +15,11 @@ public class PathWatcher {
 
     private static final Logger mLogger = LoggerFactory.getLogger(PathWatcher.class);
 
-    private PathEventProcessor mFileProcessor = new PathEventProcessor();
-    private List<Thread> mThreadList = new ArrayList<Thread>();
+    private final PathEventProcessor mFileProcessor = new PathEventProcessor();
+    private final List<Thread> mThreadList = new ArrayList<>();
 
 
-    public void addWatch(final String directoryToWatch) throws IOException, InterruptedException {
+    public void addWatch(final String directoryToWatch) throws IOException {
 
         final Path path = Paths.get(directoryToWatch);
         if (path == null) {

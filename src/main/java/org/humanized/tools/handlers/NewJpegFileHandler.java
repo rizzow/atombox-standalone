@@ -23,7 +23,7 @@ public class NewJpegFileHandler implements FileOperationHandler {
 
     @Override
     public List<String> getExtensionFilter() {
-        final List<String> extensions = new ArrayList<String>();
+        final List<String> extensions = new ArrayList<>();
         extensions.add("jpg");
         extensions.add("jpeg");
         extensions.add("JPG");

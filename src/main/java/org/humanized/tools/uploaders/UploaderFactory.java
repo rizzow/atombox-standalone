@@ -2,6 +2,7 @@ package org.humanized.tools.uploaders;
 
 import org.humanized.tools.uploaders.amazon.AmazonS3Uploader;
 import org.humanized.tools.uploaders.dummy.DummyUploader;
+import org.humanized.tools.uploaders.fs.FilesystemUploader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -84,6 +85,10 @@ public class UploaderFactory {
 
         u = new DummyUploader();
         candidates.put(u.getId(), u);
+
+        u = new FilesystemUploader();
+        candidates.put(u.getId(), u);
+
         return candidates;
     }
 }
